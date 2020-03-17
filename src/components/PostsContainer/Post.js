@@ -13,9 +13,12 @@ const Post = props => {
   const [count, setCount] = useState(0);
 
   const likeIncrement = () => {
-    if (count < 1) {
+    if (count === 0) {
       setCount(count + 1);
       setLikes(likes + 1);
+    } else {
+      setCount(count - 1);
+      setLikes(likes - 1);
     }
   };
 
